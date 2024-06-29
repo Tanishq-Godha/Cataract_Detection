@@ -11,8 +11,6 @@ from fastapi.responses import JSONResponse
 import numpy as np
 import tensorflow as tf
 import pandas as pd
-import tempfile
-import os
 # import requests
 
 # loaded_model = None
