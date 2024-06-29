@@ -13,39 +13,39 @@ import tensorflow as tf
 import pandas as pd
 import tempfile
 import os
-import requests
+# import requests
 
-loaded_model = None
+# loaded_model = None
 
 
-def load_model_from_github():
-    global loaded_model
-    if loaded_model is None:
-        model_url = "https://github.com/Tanishq-Godha/FastAPI_test/tree/master/test_model"  # Replace with your GitHub repository URL
-        local_dir = tempfile.mkdtemp()
-        model_path = os.path.join(local_dir, 'tensorflow_model')
+# def load_model_from_github():
+#     global loaded_model
+#     if loaded_model is None:
+#         model_url = "https://github.com/Tanishq-Godha/FastAPI_test/tree/master/test_model"  # Replace with your GitHub repository URL
+#         local_dir = tempfile.mkdtemp()
+#         model_path = os.path.join(local_dir, 'tensorflow_model')
 
  
-        download_files(model_url, model_path)
+#         download_files(model_url, model_path)
 
 
-        loaded_model = tf.keras.models.load_model(model_path)
+#         loaded_model = tf.keras.models.load_model(model_path)
     
-    return loaded_model
+#     return loaded_model
 
 
-def download_files(url, save_dir):
-    response = requests.get(url, stream=True)
-    response.raise_for_status()
-    with open(save_dir, 'wb') as f:
-        for chunk in response.iter_content(chunk_size=8192):
-            f.write(chunk)
+# def download_files(url, save_dir):
+#     response = requests.get(url, stream=True)
+#     response.raise_for_status()
+#     with open(save_dir, 'wb') as f:
+#         for chunk in response.iter_content(chunk_size=8192):
+#             f.write(chunk)
 
 
 
 
 app = FastAPI()
-classifier = load_model_from_github()
+classifier = tf.keras.models.load_model("test_model")
 
 
 @app.get('/')
