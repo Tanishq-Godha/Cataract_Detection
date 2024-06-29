@@ -9,7 +9,7 @@ import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
-import tensorflow as tf
+from tensorflow.keras.models import load_model
 import pandas as pd
 # import requests
 
@@ -43,7 +43,7 @@ import pandas as pd
 
 
 app = FastAPI()
-classifier = tf.keras.models.load_model("test_model")
+classifier = load_model("test_model")
 
 
 # @app.get('/')
