@@ -46,13 +46,13 @@ app = FastAPI()
 classifier = tf.keras.models.load_model("test_model")
 
 
-@app.get('/')
-def index():
-    return {'message': 'Hello, World'}
+# @app.get('/')
+# def index():
+#     return {'message': 'Hello, World'}
 
-@app.get('/{name}')
-def get_name(name: str):
-    return {'Testing..': f'{name}'}
+# @app.get('/{name}')
+# def get_name(name: str):
+#     return {'Testing..': f'{name}'}
 
 
 @app.post('/predict')
