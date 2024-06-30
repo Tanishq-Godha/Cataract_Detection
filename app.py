@@ -9,8 +9,8 @@ import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
-from tensorflow.keras.models import load_model
-import pandas as pd
+import tensorflow as tf
+from PIL import Image
 # import requests
 
 # loaded_model = None
@@ -43,24 +43,31 @@ import pandas as pd
 
 
 app = FastAPI()
-classifier = load_model("test_model")
+classifier = tf.keras.models.load_model("test_model")
 
 
-# @app.get('/')
-# def index():
-#     return {'message': 'Hello, World'}
-
-# @app.get('/{name}')
-# def get_name(name: str):
-#     return {'Testing..': f'{name}'}
-
+def preprocess_image(contents, target_size=(224, 224)):
+        # Load image using PIL
+        img = Image.open(contents.file)
+        # Resize image
+        img_resized = img.resize(target_size)
+        # Convert PIL image to numpy array
+        img_array = np.asarray(img_resized)
+        # Expand dimensions to match model expected input shape
+        img_input = np.expand_dims(img_array, axis=0)
+        # Preprocess image for model prediction
+        return img_input
+   
 
 @app.post('/predict')
 async def predict(file: UploadFile = File(...)):
     try:
-        contents = await file.read()
-        img = np.array(contents)
-        prediction = classifier.predict([img])
+        img_input = preprocess_image(file)
+        prediction = classifier.predict(img_input)[0][0]
+        if prediction > 0.5:
+            prediction = int(1)
+        else:
+            prediction = int(0)
 
         return JSONResponse({
             'prediction': prediction
