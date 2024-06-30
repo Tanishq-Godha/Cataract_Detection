@@ -1,8 +1,5 @@
 numpy
 scipy
-scikit-learn
-matplotlib
-pandas
 fastapi
 uvicorn
 gunicorn
