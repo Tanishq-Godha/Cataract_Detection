@@ -1,11 +1,9 @@
 numpy
 scipy
-scikit-learn
-matplotlib
-pandas
 fastapi
 uvicorn
 gunicorn
 uvloop
 httptools
 tensorflow-cpu>=2.0,<3.0
+PIL
