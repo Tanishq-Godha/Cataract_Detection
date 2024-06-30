@@ -13,6 +13,7 @@ import tensorflow as tf
 # import imageio
 from PIL import Image
 import os
+import pkg_resources
 
 
 
@@ -46,7 +47,7 @@ import os
 
 
 
-model_path = os.path.join(os.path.dirname(__file__), 'test_model.keras')
+model_path = pkg_resources.resource_filename(__name__, 'test_model.keras')
 app = FastAPI()
 classifier = tf.keras.models.load_model(model_path)
 
