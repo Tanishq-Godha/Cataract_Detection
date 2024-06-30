@@ -7,4 +7,5 @@ uvloop
 httptools
 tensorflow-cpu>=2.0,<3.0
 Pillow==8.4.0
+setuptools
 
