@@ -10,7 +10,6 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
 from tensorflow.keras.models import load_model
-import pandas as pd
 # import requests
 
 # loaded_model = None
