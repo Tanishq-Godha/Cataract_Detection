@@ -10,7 +10,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
 import tensorflow as tf
-from PIL import Image
+import imageio
 # import requests
 
 # loaded_model = None
@@ -48,9 +48,10 @@ classifier = tf.keras.models.load_model("test_model")
 
 def preprocess_image(contents, target_size=(224, 224)):
         # Load image using PIL
-        img = Image.open(contents.file)
+         img = imageio.imread(contents.file)
         # Resize image
-        img_resized = img.resize(target_size)
+        img_resized = imageio.imresize(img, target_size)
+       
         # Convert PIL image to numpy array
         img_array = np.asarray(img_resized)
         # Expand dimensions to match model expected input shape
