@@ -43,7 +43,7 @@ import imageio
 
 
 app = FastAPI()
-classifier = tf.keras.models.load_model("test_model")
+classifier = tf.keras.models.load_model("test_model.keras")
 
 
 def preprocess_image(contents, target_size=(224, 224)):
