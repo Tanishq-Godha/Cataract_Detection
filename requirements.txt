@@ -6,4 +6,4 @@ gunicorn
 uvloop
 httptools
 tensorflow-cpu>=2.0,<3.0
-imageio
+imageio==2.14.0
