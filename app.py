@@ -9,7 +9,7 @@ import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
-from tensorflow.keras.models import load_model
+import tensorflow
 import pandas as pd
 # import requests
 
@@ -43,7 +43,9 @@ import pandas as pd
 
 
 app = FastAPI()
-classifier = load_model("test_model.h5")
+classifier = tf.keras.models.load_model('80_resnet_attn.h5')
+
+
 
 
 # @app.get('/')
