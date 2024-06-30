@@ -6,4 +6,5 @@ gunicorn
 uvloop
 httptools
 tensorflow-cpu>=2.0,<3.0
-imageio
+Pillow==8.4.0
+
