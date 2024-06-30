@@ -12,6 +12,10 @@ import numpy as np
 import tensorflow as tf
 # import imageio
 from PIL import Image
+import os
+
+
+
 # import requests
 
 # loaded_model = None
@@ -42,9 +46,9 @@ from PIL import Image
 
 
 
-
+model_path = os.path.join(os.path.dirname(__file__), 'test_model.keras')
 app = FastAPI()
-classifier = tf.keras.models.load_model("test_model.keras")
+classifier = tf.keras.models.load_model(model_path)
 
 
 def preprocess_image(contents, target_size=(224, 224)):
