@@ -47,8 +47,7 @@ import pkg_resources
 
 
 
-model_path = pkg_resources.resource_filename(__name__, 'test_model.keras')
-app = FastAPI()
+model_path = 'test_model.keras'
 classifier = tf.keras.models.load_model(model_path)
 
 
