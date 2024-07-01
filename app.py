@@ -44,8 +44,15 @@ from PIL import Image
 model_found = True
 
 app = FastAPI()
+
+import path
+import sys
+
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
+
 try:
-    classifier = tf.keras.models.load_model("model.keras")
+    classifier = tf.keras.models.load_model("test_model.keras")
 except:
     model_found = False
     
