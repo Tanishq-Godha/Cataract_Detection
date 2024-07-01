@@ -12,11 +12,6 @@ import numpy as np
 import tensorflow as tf
 # import imageio
 from PIL import Image
-import os
-import pkg_resources
-
-
-
 # import requests
 
 # loaded_model = None
@@ -46,9 +41,14 @@ import pkg_resources
 #             f.write(chunk)
 
 
+model_found = True
 
-model_path = 'test_model.keras'
-classifier = tf.keras.models.load_model(model_path)
+app = FastAPI()
+try:
+    classifier = tf.keras.models.load_model("test_model.keras")
+except:
+    model_found = False
+    
 
 
 def preprocess_image(contents, target_size=(224, 224)):
@@ -69,11 +69,16 @@ def preprocess_image(contents, target_size=(224, 224)):
 async def predict(file: UploadFile = File(...)):
     try:
         img_input = preprocess_image(file)
-        prediction = classifier.predict(img_input)[0][0]
-        if prediction > 0.5:
-            prediction = int(1)
-        else:
-            prediction = int(0)
+        prediction = 0
+        if model_found :
+            prediction = classifier.predict(img_input)[0][0]
+            if prediction > 0.5:
+                prediction = int(1)
+            else:
+                prediction = int(0)
+        else :
+            prediction = int(5)
+            
 
         return JSONResponse({
             'prediction': prediction
