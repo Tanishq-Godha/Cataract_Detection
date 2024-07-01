@@ -45,7 +45,7 @@ model_found = True
 
 app = FastAPI()
 try:
-    classifier = tf.keras.models.load_model("test_model.keras")
+    classifier = tf.keras.models.load_model("model.keras")
 except:
     model_found = False
     
