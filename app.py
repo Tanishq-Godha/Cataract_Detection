@@ -51,10 +51,12 @@ app = FastAPI()
 # dir = path.Path(__file__).abspath()
 # sys.path.append(dir.parent.parent)
 
-try:
-    classifier = tf.keras.models.load_model("/app/model.keras")
-except:
-    model_found = False
+# try:
+#     classifier = tf.keras.models.load_model("/app/model.keras")
+# except:
+#     model_found = False
+
+classifier = tf.keras.models.load_model("/app/model.keras")
     
 
 
@@ -72,20 +74,42 @@ def preprocess_image(contents, target_size=(224, 224)):
     return img_input
    
 
+# @app.post('/predict')
+# async def predict(file: UploadFile = File(...)):
+#     try:
+#         img_input = preprocess_image(file)
+#         prediction = 0
+#         if model_found :
+#             prediction = classifier.predict(img_input)[0][0]
+#             if prediction > 0.5:
+#                 prediction = int(1)
+#             else:
+#                 prediction = int(0)
+#         else :
+#             prediction = int(5)
+            
+
+#         return JSONResponse({
+#             'prediction': prediction
+#         })
+#     except Exception as e:
+#         return JSONResponse({
+#             'error': f'Error during prediction: {str(e)}'
+#         }, status_code=500)
+
 @app.post('/predict')
 async def predict(file: UploadFile = File(...)):
     try:
         img_input = preprocess_image(file)
         prediction = 0
-        if model_found :
-            prediction = classifier.predict(img_input)[0][0]
-            if prediction > 0.5:
-                prediction = int(1)
-            else:
-                prediction = int(0)
-        else :
-            prediction = int(5)
-            
+        
+        prediction = classifier.predict(img_input)[0][0]
+        if prediction > 0.5:
+            prediction = int(1)
+        else:
+            prediction = int(0)
+    
+        
 
         return JSONResponse({
             'prediction': prediction
