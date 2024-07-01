@@ -45,14 +45,14 @@ model_found = True
 
 app = FastAPI()
 
-import path
-import sys
+# import path
+# import sys
 
-dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent.parent)
+# dir = path.Path(__file__).abspath()
+# sys.path.append(dir.parent.parent)
 
 try:
-    classifier = tf.keras.models.load_model("test_model.keras")
+    classifier = tf.keras.models.load_model("/app/model.keras")
 except:
     model_found = False
     
