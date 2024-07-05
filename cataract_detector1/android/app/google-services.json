@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "799981159394",
+    "project_id": "cataractdetect-c55d0",
+    "storage_bucket": "cataractdetect-c55d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799981159394:android:ff510e28a37b4579256fbb",
+        "android_client_info": {
+          "package_name": "com.example.cataract_detector1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799981159394-oean30bk4l57l7i2179474r98oka147k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cataract_detector1",
+            "certificate_hash": "df65986caa9bb2385e197fc0dd217d94d9a3f503"
+          }
+        },
+        {
+          "client_id": "799981159394-s1k5v7sqa1i70qven9ek1q7pu55gnfpo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLKNcQ-6y8GFbDwa8h5EZv5fOY_pwt21w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799981159394-s1k5v7sqa1i70qven9ek1q7pu55gnfpo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "799981159394-b3e5u2mr8iif8qqbk2g80akko954qn8g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cataractDetector"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

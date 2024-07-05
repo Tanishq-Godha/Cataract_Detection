@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>799981159394-b3e5u2mr8iif8qqbk2g80akko954qn8g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.799981159394-b3e5u2mr8iif8qqbk2g80akko954qn8g</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>799981159394-oean30bk4l57l7i2179474r98oka147k.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3YNfXyo6wyRFoy97RfVJ9LLRwMGAjWNY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>799981159394</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.cataractDetector</string>
+	<key>PROJECT_ID</key>
+	<string>cataractdetect-c55d0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cataractdetect-c55d0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:799981159394:ios:d015d2e04fcc6a20256fbb</string>
+</dict>
+</plist>
