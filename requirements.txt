@@ -1,9 +1,0 @@
-numpy
-scipy
-fastapi
-uvicorn
-gunicorn
-uvloop
-httptools
-tensorflow-cpu>=2.0,<3.0
-imageio==2.14.0
