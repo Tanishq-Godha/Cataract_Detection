@@ -184,8 +184,8 @@ void _navigateToResultPage() async {
 
         // Update the results
         setState(() {
-          _righteyeresult = "NORMAL";
-          _lefteyeresult = "NORMAL";
+          _righteyeresult = rightEyeResult;
+          _lefteyeresult = leftEyeResult;
           // _lefteyeresult = "NORMAL";
         });
 
