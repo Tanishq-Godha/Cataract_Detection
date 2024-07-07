@@ -2,7 +2,7 @@
 *Detection of Cataract by using Deep Learning Models on Digital Camera Images*
 
 ## Basic Overview:
-
+![flowchart](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/SIDDHI_flowchart%20(1).png?raw=true)
 ## Usage:
 - Login/SignUp:
 	+ First, the user must sign in with their account to use the app.
