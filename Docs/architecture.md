@@ -18,5 +18,5 @@
 		+ 4869 with Normal Eyes
 	- Image Resolution: 2048 px * 1536 px
 	- Image Type: PNG
-	## Training:
+	## Overview of Training Process:
 	![alt text](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/SIDDHI_flowchart(2).png?raw=true) 
