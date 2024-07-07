@@ -1,0 +1,12 @@
+numpy
+scipy
+fastapi
+uvicorn
+gunicorn
+uvloop
+httptools
+tensorflow-cpu>=2.0,<3.0
+Pillow==8.4.0
+setuptools
+path==16.0.0
+
