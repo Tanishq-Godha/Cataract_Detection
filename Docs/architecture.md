@@ -10,8 +10,10 @@
     - **Resizing Image:** Resizing the image to meet the model input critera.  
 	## Block 1- ResNet50:
 	- Contains Deep CNN Layers with Residual Connections 
+	- ResNet50 is known for its fast and accurate image classification capabilities.	
 	## Block2- Attention Module:
 	- Contains Attention kernel(sigmoid activation) which helps to emphasize more on important features as trained on.
+	- This Block helps to focus the attention to the lens region of the eye(the distinguishable feature of classification).
 	## Dataset:
 	- The Dataset Consists of a total of 9000 images:
 		+ 4131 with Cataract Eyes
