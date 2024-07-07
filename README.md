@@ -10,5 +10,6 @@
 
 - Input images of eyes on the app:
 	+ The user can add images of their eyes clicked by the camera or one in their gallery(both left and right eye).
+![eye_scan](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/eye_scan.png?raw=true)
 - Model Predicts the condition: 
 	+ The Model predicts and returns the output to the app and the result is shown and saved in the user's account.
