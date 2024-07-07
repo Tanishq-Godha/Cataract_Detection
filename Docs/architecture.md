@@ -10,7 +10,7 @@
 	## Block 1- ResNet50:
 	- Contains Deep CNN Layers with Residual Connections 
 	## Block2- Attention Module:
-	- contains Attention kernel(sigmoid activation) which helps to emphasize more on important features as trained on.
+	- Contains Attention kernel(sigmoid activation) which helps to emphasize more on important features as trained on.
 	## Dataset:
 	- The Dataset Consists of a total of 9000 images:
 		+ 4131 with Cataract Eyes
