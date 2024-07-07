@@ -3,7 +3,7 @@
 - Input Shape: **(224, 224, 3)**
 - Output: **Float between 0(Cataract) and 1(Normal)**
 - Basic I/O flow: 
-    ![Image](Tanishq-Godha/Cataract_Detection/Docs/images/Copy of SIDDHI_flowchart(1).png)
+    ![alt text](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/SIDDHI_flowchart(2).png?raw=true)
 	## Block 1- ResNet50:
 	- Contains Deep CNN Layers with Residual Connections 
 	## Block2- Attention Module:
@@ -15,4 +15,4 @@
 	- Image Resolution: 2048 px * 1536 px
 	- Image Type: PNG
 	## Training:
-	![Image](Tanishq-Godha/Cataract_Detection/Docs/images/SIDDHI_flowchart(2).png)  
+	![alt text](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/Copy_of_SIDDHI_flowchart(1).png?raw=true)  
