@@ -1,4 +1,4 @@
-# Model Architecture
+# Model Architecture and Training
 - Model Used: **ResNet50 + Attention**
 - Input Shape: **(224, 224, 3)**
 - Output: **Float between 0(Cataract) and 1(Normal)**
