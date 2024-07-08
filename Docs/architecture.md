@@ -1,24 +1,75 @@
-# Model Architecture and Training
-- Model Used: **ResNet50 + Attention**
-- Input Shape: **(224, 224, 3)**
-- Output: **Float between 0(Cataract) and 1(Normal)**
-- Basic I/O flow: 
-    ![alt text](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/Copy%20of%20SIDDHI_flowchart(1).png?raw=true)
-    ## Pre-Processing:
-    - **Data Augmentation:** Random Scaling, Translation, Rotation and Zoom was applied to make the Model robust.
-    - **Lens Cropping:** Cropping the image of eye to its Iris portion for better accuracy on prediction.
-    - **Resizing Image:** Resizing the image to meet the model input critera.  
-	## Block 1- ResNet50:
-	- Contains Deep CNN Layers with Residual Connections 
-	- ResNet50 is known for its fast and accurate image classification capabilities.	
-	## Block2- Attention Module:
-	- Contains Attention kernel(sigmoid activation) which helps to emphasize more on important features as trained on.
-	- This Block helps to focus the attention to the lens region of the eye(the distinguishable feature of classification).
-	## Dataset:
-	- The Dataset Consists of a total of 9000 images:
-		+ 4131 with Cataract Eyes
-		+ 4869 with Normal Eyes
-	- Image Resolution: 2048 px * 1536 px
-	- Image Type: PNG
-	## Overview of Training Process:
-	![alt text](https://github.com/Tanishq-Godha/Cataract_Detection/blob/master/Docs/images/SIDDHI_flowchart(2).png?raw=true) 
+# Machine Learning Model Architecture
+
+## Overview
+
+Our model for Cataract Detection is a Resnet50 + Attention module based CNN model. 
+
+## Model Components
+
+### Input Layer
+
+The input layer consists of a 224*224 tensor which is effectively a resized image.
+
+### Hidden Layers
+
+1. The base layer is a pre - trained resnet50 model.
+2. Spatial_attention module
+3. Global_average_pooling and flatten layers
+
+### Output Layer
+
+The output layer is a sigmoid layer giving a number between 0 and 1 as a output.
+
+## Key Components
+
+### Loss Function
+
+Binary - Cross entropy loss function used on sigmoid output layer.
+
+### Optimization Algorithm
+
+Adam optimizer with initial learing rate of 1e-3 was used.
+
+### Metrics
+
+Model achieved validation accuracy of over 90 percent.
+
+## Example Code Snippet
+
+Provide a simplified code snippet that outlines the model architecture in a programming language such as Python:
+### Model neural network architecture
+
+python
+import tensorflow as tf
+
+#### Model Input
+input_tensor = Input(shape=input_shape)
+base_model = ResNet50(include_top=False, weights='imagenet', input_tensor=input_tensor)
+
+#### Add attention module
+x = base_model.get_layer("conv4_block6_out").output
+x = spatial_attention_module(x)
+
+#### Spatial attention module
+def spatial_attention_module(input_feature):
+avg_pool = tf.reduce_mean(input_feature, axis=-1, keepdims=True)
+max_pool = tf.reduce_max(input_feature, axis=-1, keepdims=True)
+concat = tf.concat([avg_pool, max_pool], axis=-1)
+attention = Conv2D(1, kernel_size=7, padding='same', activation='sigmoid')(concat)
+return Multiply()([input_feature, attention])
+
+#### rest of the ResNet50 layers
+x = base_model.get_layer("conv5_block1_out")(x)
+x = GlobalAveragePooling2D()(x)
+x = Flatten()(x)
+output = Dense(1, activation='sigmoid')(x)
+
+model = Model(inputs=input_tensor, outputs=output)
+
+#### Model Compilation
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate = 1e-3), loss='binary_crossentropy', metrics=['accuracy'])
+
+#### Model Serialization and Loading
+model.save("test_model.keras")
+model.load("test_model.keras")
+
