@@ -12,6 +12,7 @@ import numpy as np
 import tensorflow as tf
 # import imageio
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
 # import requests
 
 # loaded_model = None
@@ -44,6 +45,14 @@ from PIL import Image
 model_found = True
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 # import path
 # import sys
